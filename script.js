@@ -21,35 +21,30 @@ function calculator(a,b,operator){
 }
 
 const calcScreen = document.querySelector('.display');
-const buttons = document.querySelectorAll('button');
+const numbers = document.querySelector('.numbers');
 
-buttons.forEach((button)=>{
-    
-    button.addEventListener('click', ()=>{
-        if(button.innerText == '0'){
-            calcScreen.innerText = '0';
-        } else if(button.innerText == '1'){
-            calcScreen.innerText = '1';
-        }else if(button.innerText == '2'){
-            calcScreen.innerText = '2';
-        }else if(button.innerText == '3'){
-            calcScreen.innerText = '3';
-        }else if(button.innerText == '4'){
-            calcScreen.innerText = '4';
-        }else if(button.innerText == '5'){
-            calcScreen.innerText = '5';
-        }else if(button.innerText == '6'){
-            calcScreen.innerText = '6';
-        }else if(button.innerText == '7'){
-            calcScreen.innerText = '7';
-        }else if(button.innerText == '8'){
-            calcScreen.innerText = '8';
-        }else if(calcScreen.innerText =='9'){
-            calcScreen.innerText = '9';
-        }//Clear button
-        else{
-            calcScreen.innerText = 0;
-        }
+//value 
+let num1 = [];
+let num2 = [];
 
+//create number buttons
+for(let i = 0; i <= 9; i++){
+    num1.push(i)
+    let numberBtn = document.createElement('button');
+    numberBtn.innerText = i;
+    numbers.appendChild(numberBtn);
+
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach((button)=>{
+        button.addEventListener('click', ()=>{
+            calcScreen.innerText = button.innerText;
+            
+        });
     });
-});
+
+};
+
+
+
+
