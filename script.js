@@ -21,7 +21,7 @@ function calculator(a,b,operator){
 }
 
 const calcScreen = document.querySelector('.display');
-const buttons = document.querySelectorAll('.buttons');
+const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button)=>{
     
