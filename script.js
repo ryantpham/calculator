@@ -22,6 +22,7 @@ function calculator(a,b,operator){
 
 const calcScreen = document.querySelector('.display');
 const numbers = document.querySelector('.numbers');
+const operator = document.querySelector('.operator')
 
 //value 
 let num1 = [];
@@ -29,22 +30,17 @@ let num2 = [];
 
 //create number buttons
 for(let i = 0; i <= 9; i++){
-    num1.push(i)
     let numberBtn = document.createElement('button');
     numberBtn.innerText = i;
     numbers.appendChild(numberBtn);
-
-    const buttons = document.querySelectorAll('button');
-
-    buttons.forEach((button)=>{
-        button.addEventListener('click', ()=>{
-            calcScreen.innerText = button.innerText;
-            
-        });
-    });
-
 };
 
-
-
-
+//Displays Number and appends it to Array
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button)=>{
+    button.addEventListener('click', ()=>{
+        calcScreen.innerText = button.innerText;
+        num1.push(button.innerText)
+        console.log(num1)
+    });
+});
