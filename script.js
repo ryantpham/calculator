@@ -29,7 +29,7 @@ let num1 = [];
 let num2 = [];
 
 //create number buttons
-for(let i = 0; i <= 9; i++){
+for(let i = 9; i >= 0; i--){
     let numberBtn = document.createElement('button');
     numberBtn.innerText = i;
     numbers.appendChild(numberBtn);
@@ -77,7 +77,7 @@ clearBtn.addEventListener('click', ()=>{
 })
 
 //Add button
-const addBtn = document.querySelector('.add')
+const addBtn = document.querySelector('.add');
 addBtn.addEventListener('click', ()=>{
         num1 = num1.join('');
         num1 = parseInt(num1);
@@ -86,8 +86,38 @@ addBtn.addEventListener('click', ()=>{
         calcScreen.innerText = num1;
 });
 
-//Solve button
-const equalsBtn = document.querySelector('.equals')
+//Subtract button
+const minusBtn = document.querySelector('.minus');
+minusBtn.addEventListener('click', ()=>{
+    num1 = num1.join('');
+    num1 = parseInt(num1);
+    isNum1Complete = true;
+    operation = subtract;
+    calcScreen.innerText = num1;
+});
+
+//Multiply button
+const multiplyBtn = document.querySelector('.multiply');
+multiplyBtn.addEventListener('click', ()=>{
+    num1 = num1.join('');
+    num1 = parseInt(num1);
+    isNum1Complete = true;
+    operation = multiply;
+    calcScreen.innerText = num1;
+});
+
+//Divide button
+const divideBtn = document.querySelector('.divide');
+divideBtn.addEventListener('click', ()=>{
+    num1 = num1.join('');
+    num1 = parseInt(num1);
+    isNum1Complete = true;
+    operation = divide;
+    calcScreen.innerText = num1;
+});
+
+//Equals button
+const equalsBtn = document.querySelector('.equals');
 equalsBtn.addEventListener('click', ()=>{
     num2 = num2.join('');
     num2 = parseInt(num2);
