@@ -156,18 +156,47 @@ footer a:hover {
 
 /* Mobile Styles */
 @media (max-width: 580px) {
+    body {
+        padding: 0 5vw;
+    }
+
     .calculator {
-        width: 90vw; /* Adjust width to fit screen */
-        height: auto; /* Make height flexible */
-        padding: 20px 10px; /* Adjust padding */
+        width: 80vw;
+        padding: 15px 5%;
     }
 
     h1 {
-        padding-top: 15vh;
-        font-size: 2em; /* Adjust title size for smaller screens */
+        padding-top: 10vh;
+        font-size: 1.8em;
     }
 
-    body {
-        padding: 0 10px; /* Add padding to the sides */
+    .features, .operators, .numbers {
+        gap: 5px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 1.2em;
+    }
+
+    .zero, .decimal {
+        grid-column: span 1;
     }
 }
+
+@media (min-width: 581px) and (max-width: 768px) {
+    .calculator {
+        width: 75vw;
+        padding: 15px 8%;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 1.4em;
+    }
+}
+
