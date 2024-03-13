@@ -179,9 +179,7 @@ footer a:hover {
         font-size: 1.2em;
     }
 
-    .zero, .decimal {
-        grid-column: span 1;
-    }
+
 }
 
 @media (min-width: 581px) and (max-width: 768px) {
