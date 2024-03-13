@@ -73,6 +73,7 @@ h1::after {
     width: 90%; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px; 
+    font-weight: bold;
 }
 
 .features{
@@ -132,3 +133,23 @@ button:active {
 .clear, .delete, .toggle-sign {
     background-color: dodgerblue;
 }
+
+/*Footer*/
+footer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    color: #E0E0E0; /* Light gray text for visibility against the dark background */
+}
+
+footer a {
+    color: #30CFD0; /* A color that stands out but is still pleasant, matching your theme */
+    text-decoration: none; /* Removes underline from links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Adds underline on hover for visual feedback */
+}
+
