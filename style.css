@@ -105,6 +105,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     border-radius: 5px;
+    color: #222;
 }
 
 button:active {
