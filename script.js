@@ -28,13 +28,6 @@ const operator = document.querySelector('.operator');
 let num1 = [];
 let num2 = [];
 
-//create number buttons
-for(let i = 9; i >= 0; i--){
-    let numberBtn = document.createElement('button');
-    numberBtn.innerText = i;
-    numbers.appendChild(numberBtn);
-};
-
 let isFirstClick = true; // Flag to track if it's the first button click
 let isNum1Complete = false; // New flag to check if we're done with num1
 let operation = null; // To keep track of the current operation
@@ -42,7 +35,7 @@ let operation = null; // To keep track of the current operation
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        if (parseInt(button.innerText) == button.innerText) {
+        if (parseFloat(button.innerText) == button.innerText || button.innerText == '.') {
             if (isFirstClick) {
                 // Clear the initial value and reset the flag
                 calcScreen.innerText = '';
@@ -80,7 +73,7 @@ clearBtn.addEventListener('click', ()=>{
 const addBtn = document.querySelector('.add');
 addBtn.addEventListener('click', ()=>{
         num1 = num1.join('');
-        num1 = parseInt(num1);
+        num1 = parseFloat(num1);
         isNum1Complete = true;
         operation = add;
         calcScreen.innerText = num1;
@@ -90,7 +83,7 @@ addBtn.addEventListener('click', ()=>{
 const minusBtn = document.querySelector('.minus');
 minusBtn.addEventListener('click', ()=>{
     num1 = num1.join('');
-    num1 = parseInt(num1);
+    num1 = parseFloat(num1);
     isNum1Complete = true;
     operation = subtract;
     calcScreen.innerText = num1;
@@ -100,7 +93,7 @@ minusBtn.addEventListener('click', ()=>{
 const multiplyBtn = document.querySelector('.multiply');
 multiplyBtn.addEventListener('click', ()=>{
     num1 = num1.join('');
-    num1 = parseInt(num1);
+    num1 = parseFloat(num1);
     isNum1Complete = true;
     operation = multiply;
     calcScreen.innerText = num1;
@@ -110,17 +103,19 @@ multiplyBtn.addEventListener('click', ()=>{
 const divideBtn = document.querySelector('.divide');
 divideBtn.addEventListener('click', ()=>{
     num1 = num1.join('');
-    num1 = parseInt(num1);
+    num1 = parseFloat(num1);
     isNum1Complete = true;
     operation = divide;
     calcScreen.innerText = num1;
 });
 
+
+
 //Equals button
 const equalsBtn = document.querySelector('.equals');
 equalsBtn.addEventListener('click', ()=>{
     num2 = num2.join('');
-    num2 = parseInt(num2);
+    num2 = parseFloat(num2);
     let result = calculator(num1,num2,operation);
     calcScreen.innerText = result;
 
