@@ -155,7 +155,7 @@ footer a:hover {
 }
 
 /* Mobile Styles */
-@media (max-width: 480px) {
+@media (max-width: 580px) {
     .calculator {
         width: 90vw; /* Adjust width to fit screen */
         height: auto; /* Make height flexible */
