@@ -154,3 +154,20 @@ footer a:hover {
     text-decoration: underline; /* Adds underline on hover for visual feedback */
 }
 
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .calculator {
+        width: 90vw; /* Adjust width to fit screen */
+        height: auto; /* Make height flexible */
+        padding: 20px 10px; /* Adjust padding */
+    }
+
+    h1 {
+        padding-top: 15vh;
+        font-size: 2em; /* Adjust title size for smaller screens */
+    }
+
+    body {
+        padding: 0 10px; /* Add padding to the sides */
+    }
+}
