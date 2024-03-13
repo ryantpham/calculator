@@ -109,7 +109,43 @@ divideBtn.addEventListener('click', ()=>{
     calcScreen.innerText = num1;
 });
 
+//Delete Button
+const deleteBtn = document.querySelector('.delete');
+deleteBtn.addEventListener('click', () => {
+    if (!isNum1Complete) {
+        // Working with num1
+        if (num1.length > 0) {
+            num1.pop(); // Remove the last digit from num1
+            calcScreen.innerText = num1.join('') || "0"; // Update display or show 0 if empty
+        }
+    } else {
+        // Working with num2
+        if (num2.length > 0) {
+            num2.pop(); // Remove the last digit from num2
+            calcScreen.innerText = num2.join('') || "0"; // Update display or show 0 if empty
+        }
+    }
+});
 
+// Toggle sign button
+const toggleBtn = document.querySelector('.toggle-sign');
+toggleBtn.addEventListener('click', () => {
+    if (!isNum1Complete) {
+        // Working with num1
+        if (num1.length > 0) {
+            let number = parseFloat(num1.join('')) * -1;
+            num1 = number.toString().split('');
+            calcScreen.innerText = number.toString();
+        }
+    } else {
+        // Working with num2
+        if (num2.length > 0) {
+            let number = parseFloat(num2.join('')) * -1;
+            num2 = number.toString().split('');
+            calcScreen.innerText = number.toString();
+        }
+    }
+});
 
 //Equals button
 const equalsBtn = document.querySelector('.equals');
@@ -127,8 +163,3 @@ equalsBtn.addEventListener('click', ()=>{
     operation = null; 
     
 });
-
-
-// operator button merge arr num1 for further calculation
-// after operator every click appends numbers to num2
-// = solves the num with array
